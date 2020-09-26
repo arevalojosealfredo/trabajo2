@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+
+<main role="main">
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+  
+    <div class="container marketing">
+  
+      <!-- START THE FEATURETTES -->
+  
+      <hr class="featurette-divider">
+  
+      {%for articulo in articulos%}
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">{{articulo.1}}</h2>
+          <div class="d-flex justify-content-center mt-3 align-items-center">
+            <a href="/producto/{{articulo.0}}" class="btn btn-primary">Calificar</a>
+          </div>
+
+        </div>
+        <div class="col-md-5">
+            <img src="{{articulo.2}}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" alt="Responsive image"> 
+                       
+        </div>
+      </div>
+  
+      {%endfor%}
+      <!-- /END THE FEATURETTES -->
+  
+    </div><!-- /.container -->
+  
+  
+    <!-- FOOTER -->
+    <footer class="container">
+      <p class="float-right"><a href="#">Back to top</a></p>
+      <p>&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+  </main>
+
+
+
+{% endblock %}
